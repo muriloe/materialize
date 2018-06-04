@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>	
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+           <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+            
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+        <script type="text/javascript">//<![CDATA[
+            window.onload=function(){
+             $('input.autocomplete').autocomplete({
+                data: {
+                    "Bitcoin": null,
+                    "Litecoin": null,
+                    "Nano": null
+                },
+                limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+                onAutocomplete: function(val) {
+                    // Callback function when value is autcompleted.
+                },
+                minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+            });
+
+            $('select').material_select();
+
+            $('.datepicker').pickadate({
+                selectMonths: true, // Creates a dropdown to control month
+                selectYears: 15, // Creates a dropdown of 15 years to control year,
+                today: 'Today',
+                clear: 'Clear',
+                close: 'Ok',
+                closeOnSelect: false, // Close upon selecting a date,
+                container: undefined, // ex. 'body' will append picker to body
+            });
+
+            $('.modal').modal();
+            }//]]> 
+
+        </script>
+
+    </head>
+
+
+    <body>
+        <ul id="tabs-swipe-demo" class="tabs">
+            <li class="tab col s3"><a href="#test-swipe-1">Busca</a></li>
+            <li class="tab col s3"><a class="active" href="#test-swipe-2">Alerta</a></li>
+            <li class="tab col s3"><a href="#test-swipe-3">Cadastro</a></li>
+        </ul>
+
+        <div id="test-swipe-1" class="col s12">
+            
+            <center>
+                <div class="row">
+                    <div class="col s12">
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix"></i>
+                            <input type="text" id="autocomplete-input" class="autocomplete">
+                            <label for="autocomplete-input">Autocomplete</label>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            <center>
+
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                    <div class="card-image">
+                        <img src="https://i0.wp.com/www.nadaeincomum.com.br/wp-content/uploads/2018/02/nano.png?fit=678%2C381">
+                        <span class="card-title">Descrição da moeda</span>
+                    </div>
+                    <div class="card-content">
+                        <p>A Nano surgiu para resolver os problemas das criptomoedas atuais. Principalmente, a baixa escalabilidade (poucas transações são processadas por segundo), alta latência (por conta da baixa escalabilidade, as transações demoram para ser confirmadas) e ineficiência energética (a mineração de bitcoin consome mais energia do que 159 países usam em um ano).</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="test-swipe-2" class="col s12">
+            <label>Criar um alerta:</label><br><br>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Selecione uma moeda</option>
+                    <option value="1">BitCoin</option>
+                    <option value="2">LiteCoin</option>
+                    <option value="3">Nano</option>
+                </select>
+                <label>Selecione uma moeda</label>
+            </div>
+            <br><br>
+
+            <label>Me alertar quando atingir o valor de:</label>
+            <form action="#">
+                <p class="range-field">
+                    <input type="range" id="test5" min="0" max="10000" />
+                </p>
+            </form>
+            <br><br>
+
+            <label>Enviar alerta por email?</label><br><br>
+            <div class="switch">
+                <label>
+                    Não
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                    Sim
+                </label>
+            </div>
+
+            <br><br>
+            <center>
+                <a class="btn" onclick="Materialize.toast('ALERTA CADASTRADO', 8000)">Criar alerta</a>
+            </center>      
+        </div>
+
+
+        <div id="test-swipe-3" class="col s12">
+            <div class="row">
+				<div class="input-field col s12">
+				  <input placeholder="Nome" id="nome" type="text" class="validate">
+				</div>
+			  </div>
+			  
+			  <div class="row">
+				<div class="input-field col s12">
+				  <input placeholder="Sobrenome" id="sobrenome" type="text" class="validate">
+				</div>
+			  </div>
+			  
+			  <div class="row">
+				<div class="input-field col s6">
+				  <input placeholder="Login" id="login" type="text" class="validate">
+				</div>
+				<div class="input-field col s6">
+				  <input placeholder="Senha" id="senha" type="password" class="validate">
+				</div>
+			  </div>
+			  
+			  <div class="row">
+				<div class="input-field col s12">
+				  <input placeholder="Email" id="email" type="email" class="validate">
+				</div>
+              </div>
+              
+              <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Nascimento" type="text" class="datepicker">
+                    </div>
+                </div>
+
+                  <!-- Modal Trigger -->
+                <center>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Cadastrar!</a>
+                </center>
+
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                    <h4>Termos de serviço</h4>
+                    <p>Esse é um termo de serviço que ninguem nunca vai ler, pois é muito longo e a pessoa só quer mesmo cadastrar no site, só isso, nada mais. É importante observar que não tem nada a ser observado nesse termo de serviço e se você leu até aqui você pode me dar nota dez para esse trabalho.</p>
+                    </div>
+                    <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Aceitar</a>
+                    </div>
+                </div>
+
+        </div>
+
+</html>
