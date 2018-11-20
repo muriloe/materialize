@@ -2,17 +2,17 @@
 
 Experiment with materialize framework.
 
-##Images
+## Images
 
-###Search
+### Search
 
 ![Busca](https://github.com/muriloe/materialize/blob/master/images/1%20busca.png?raw=true)
 
-###Alert
+### Alert
 
 ![Busca](https://github.com/muriloe/materialize/blob/master/images/2%20alerta.png?raw=true)
 
-###Register
+### Register
 
 ![Register](https://github.com/muriloe/materialize/blob/master/images/3%20cadastro.png?raw=true)
 
